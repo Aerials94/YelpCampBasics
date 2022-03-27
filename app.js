@@ -116,7 +116,7 @@ app.use(helmet.contentSecurityPolicy({
             workerSrc: ["'self'", "blob:"],
             objectSrc: [],
             imgSrc: [
-                "'self'",
+                "'self'", "https://calm-basin-72788.herokuapp.com/favicon.ico",
                 "blob:",
                 "data:",
                 "https://res.cloudinary.com/dozu0ibkx/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
