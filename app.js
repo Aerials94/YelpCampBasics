@@ -5,7 +5,6 @@ if (process.env.NODE_ENV !== "production") {
 
 
 
-console.log(process.env.SECRET)
 
 
 const express = require('express');
@@ -143,7 +142,7 @@ app.use((req, res, next)=> {
     next();
 })
 
-app.get('/home', (req, res)=>{
+app.get('/', (req, res)=>{
     res.render('campgrounds/home')
 })
 
@@ -159,6 +158,8 @@ app.use('/', userRoutes);
 app.all('*', (req, res, next)=> {
     next(new ExpressError('Page Not Found', 404))
 })
+
+
 app.use((err, req, res, next)=> {
     const { statusCode = 500 }= err;
     if (!err.message) err.message = 'Oh no, something went wrong';
